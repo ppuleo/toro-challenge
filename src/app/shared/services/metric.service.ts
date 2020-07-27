@@ -6,7 +6,7 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { MetricEntity } from '../models/metric.model';
 import { TableEntity } from '../models/table.model';
-import { UrlService } from '../url/url.service';
+import { UrlService } from './url.service';
 
 @Injectable({ providedIn: 'root' })
 export class MetricService {

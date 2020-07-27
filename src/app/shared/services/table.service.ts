@@ -5,7 +5,7 @@ import { BehaviorSubject, of, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { TableEntity } from '../models/table.model';
-import { UrlService } from '../url/url.service';
+import { UrlService } from './url.service';
 
 @Injectable({ providedIn: 'root' })
 export class TableService {
