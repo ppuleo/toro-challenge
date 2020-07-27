@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-title {
+  background-image: url('../../assets/Plug-1b.svg');
+  background-repeat: no-repeat;
+  background-position-x: 20px;
+  background-position-y: 4px;
+  background-size: 19%;
+}
+
+.view-content {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  margin: 0;
+}

@@ -1,0 +1,58 @@
+@use 'sass:map';
+
+@import '_variables';
+
+nav {
+  flex: 0 0 25px;
+
+  a {
+    color: $dark-primary-text;
+    text-decoration: none;
+
+    &.active {
+      border-bottom: 2px solid #fa7b06;
+    }
+  }
+}
+
+toro-root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex: 1 1 calc(100vh - 66px);
+  flex-direction: column;
+  background-color: $toro-background-light;
+
+  .view-title {
+    padding: 20px 40px;
+  }
+
+  .view-content {
+    flex: 1 1 calc(100vh - 154px);
+  }
+
+  .ag-theme-alpine {
+    .ag-row-hover {
+      background-color: map.get($toro-orange, 50);
+    }
+
+    .ag-row-selected {
+      background-color: map.get($toro-orange, 300);
+    }
+
+    .ag-root-wrapper {
+      border-color: rgba(77, 69, 63, 0.25);
+      border-radius: 0;
+    }
+  }
+
+
+  table {
+    th {
+      color: $light-primary-text;
+    }
+  }
+}

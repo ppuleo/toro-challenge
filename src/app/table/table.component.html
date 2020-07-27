@@ -1,0 +1,56 @@
+<section class="view-title">
+  <h1>Tables</h1>
+</section>
+
+<section class="view-content">
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [gridOptions]="gridOptions"
+    [rowData]="rowData"
+  >
+  </ag-grid-angular>
+
+  <section class="details">
+    <section class="details-metrics">
+      <header>
+        <h2>Metrics</h2>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th width="45%">Name</th>
+            <th width="30%">Column</th>
+            <th width="25%">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let metric of selectedMetrics">
+            <td class="metric-name">{{metric.name}}</td>
+            <td>{{metric.column}}</td>
+            <td>{{metric.currentValue}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="details-columns">
+      <header>
+        <h2>Columns</h2>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th width="60%">Name</th>
+            <th width="40%">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let column of selectedTable?.columns">
+            <td>{{column.name}}</td>
+            <td>{{column.type}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+</section>

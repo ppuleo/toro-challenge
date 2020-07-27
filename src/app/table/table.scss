@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-title {
+  background-image: url('../../assets/Plug-2b.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: 9px;
+  background-size: 19%;
+}
+
+.view-content {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  margin: 0;
+}
+
+ag-grid-angular {
+  flex: 1 1 calc(100vw - 501px);
+}
+
+.details {
+  width: 500px;
+  background-color: #fff;
+  border-top: 1px solid rgba(77, 69, 63, 0.25);
+
+  header {
+    padding: 10px 40px 10px 20px;
+    border-bottom: 1px solid rgba(77, 69, 63, 0.25);
+
+    h2 {
+      margin: 4px 0;
+      font-weight: normal;
+      line-height: 1;
+    }
+  }
+
+  table {
+    width: 100%;
+    padding: 10px 20px;
+
+    th {
+      padding: 0 0 6px;
+      font-weight: normal;
+      text-align: left;
+      border-bottom: 1px solid rgba(77, 69, 63, 0.25);
+    }
+
+    td {
+      padding: 6px 0;
+    }
+  }
+
+  .details-metrics {
+    min-height: 200px;
+  }
+}
