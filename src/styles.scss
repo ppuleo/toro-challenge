@@ -1,0 +1,49 @@
+
+@import '~@angular/material/theming';
+@import 'styles/themes/toro-light/theme.scss';
+@import 'styles/vendor';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'SFProDisplay, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, sans-serif'
+);
+
+@include mat-core($custom-typography);
+
+$toro-challenge-primary: mat-palette($toro-orange);
+$toro-challenge-accent: mat-palette($toro-grey, A200, A100, A400);
+$toro-challenge-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$toro-challenge-theme: mat-light-theme(
+  (
+    color: (
+      primary: $toro-challenge-primary,
+      accent: $toro-challenge-accent,
+      warn: $toro-challenge-warn,
+    )
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($toro-challenge-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 1000px;
+  margin: 0;
+}
+
+.view-content {
+  width: 100%;
+  height: calc(100vh - 160px);
+  overflow: hidden;
+}
