@@ -23,7 +23,7 @@ export class MetricService {
   }
 
   /**
-   * Gets the tables for a given database.
+   * Gets the metrics for a given database.
    * @param  tableId  A table id to fetch metrics for.
    */
   getMetricsForTable = (tableId: number): Observable<MetricEntity[]> => {
@@ -54,6 +54,7 @@ export class MetricService {
    * @param  tables  An array of table entities to fetch metrics for.
    */
   getMetricsForTables = (tables: TableEntity[]): Observable<MetricEntity[]> => {
+    let newMetric;
     let request;
     const metricEntities = [];
     const requestArray = [];
@@ -67,13 +68,17 @@ export class MetricService {
       map((responses: any) => {
         return responses.map((metrics, index) => {
           metrics.map((metric: any) => {
+
+            // Decorate the metric with tableId and Name.
             metric.tableId = tables[index].id;
             metric.tableName = tables[index].name;
-            metricEntities.push(new MetricEntity(metric));
-            this.metrics = metricEntities;
+
+            newMetric = new MetricEntity(metric);
+            metricEntities.push(newMetric);
             this.metrics = this.metrics.filter((item) => {
               return metric.id !== item.id;
             });
+            this.metrics.push(newMetric);
           });
         });
       }),
