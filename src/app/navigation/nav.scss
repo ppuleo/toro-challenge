@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  height: 25px;
+  padding: 20px 40px;
+  border-bottom: 1px solid rgba(77, 69, 63, 0.25);
+
+  .logo {
+    flex: 1 0 50%;
+
+    img {
+      width: 97px;
+      padding-top: 5px;
+    }
+  }
+
+  ul {
+    display: inline-block;
+    flex: 1 1 50%;
+    padding-top: 5px;
+    margin: 0;
+
+    li {
+      display: inline;
+      padding: 0 20px;
+      list-style-type: none;
+
+      a {
+        position: relative;
+        font-size: 1rem;
+        font-weight: 500;
+
+        .github-link {
+          position: relative;
+          top: 2px;
+          height: 16px;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
